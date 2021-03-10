@@ -7,6 +7,8 @@ import Movie from '../components/Movie'
 import Footer from '../components/Footer'
 import SingleMovie from '../components/SingleMovie'
 import Register from '../components/Register'
+import TestUseEffct from '../components/TestUseEffct'
+
 
 
 //Here is your key: a01c681a
@@ -65,8 +67,9 @@ class Main extends React.Component {
                 <Movie handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
                 <Switch>
                     <Route exact path='/' render={() => <Card pelis={pelis} selectMovie={this.selectMovie} />} />
-                    <Route path='/descripcion' render={() => <SingleMovie peli={selectedMovie} />} />
+                    <Route path='/descripcion' render={({ }) => <SingleMovie peli={selectedMovie} />} />
                 </Switch>
+                <TestUseEffct />
                 <Footer />
             </div>
         )

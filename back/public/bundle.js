@@ -2150,6 +2150,49 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/components/TestUseEffct.jsx":
+/*!*****************************************!*\
+  !*** ./src/components/TestUseEffct.jsx ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+const Comp = () => {
+  const [newNombre, setNombre] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    var data = JSON.stringify({
+      "email": "fhfhfe@fede.com",
+      "password": "hola"
+    });
+    var config = {
+      method: 'get',
+      url: 'http://localhost:3000/api/register',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: data
+    };
+    axios__WEBPACK_IMPORTED_MODULE_1___default()(config).then(function (response) {
+      console.log(JSON.stringify(response.data));
+    }).catch(function (error) {
+      console.log(error);
+    });
+    setNombre("fran");
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "hola mundo ", newNombre));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Comp);
+
+/***/ }),
+
 /***/ "./src/containers/Main.jsx":
 /*!*********************************!*\
   !*** ./src/containers/Main.jsx ***!
@@ -2161,13 +2204,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _components_Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Card */ "./src/components/Card.jsx");
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Header */ "./src/components/Header.jsx");
 /* harmony import */ var _components_Movie__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Movie */ "./src/components/Movie.jsx");
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Footer */ "./src/components/Footer.jsx");
 /* harmony import */ var _components_SingleMovie__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/SingleMovie */ "./src/components/SingleMovie.jsx");
 /* harmony import */ var _components_Register__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Register */ "./src/components/Register.jsx");
+/* harmony import */ var _components_TestUseEffct__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/TestUseEffct */ "./src/components/TestUseEffct.jsx");
+
 
 
 
@@ -2227,19 +2272,19 @@ class Main extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Register__WEBPACK_IMPORTED_MODULE_7__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Movie__WEBPACK_IMPORTED_MODULE_4__.default, {
       handleChange: this.handleChange,
       handleSubmit: this.handleSubmit
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
       exact: true,
       path: "/",
       render: () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Card__WEBPACK_IMPORTED_MODULE_2__.default, {
         pelis: pelis,
         selectMovie: this.selectMovie
       })
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
       path: "/descripcion",
-      render: () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SingleMovie__WEBPACK_IMPORTED_MODULE_6__.default, {
+      render: ({}) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SingleMovie__WEBPACK_IMPORTED_MODULE_6__.default, {
         peli: selectedMovie
       })
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_5__.default, null));
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TestUseEffct__WEBPACK_IMPORTED_MODULE_8__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_5__.default, null));
   }
 
 }
