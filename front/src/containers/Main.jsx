@@ -9,7 +9,7 @@ import SingleMovie from '../components/SingleMovie'
 import Register from '../components/Register'
 import TestUseEffct from '../components/TestUseEffct'
 
-
+conosle.log("hola")
 
 //Here is your key: a01c681a
 class Main extends React.Component {
